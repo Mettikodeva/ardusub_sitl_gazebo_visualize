@@ -11,7 +11,7 @@ gazebo_msgs::SetModelState srv;
 
 void updateModelState(){
     srv.request.model_state.model_name = "robot";
-    srv.request.model_state.pose.position.x = pose.pose.position.x+1;
+    srv.request.model_state.pose.position.x = pose.pose.position.x+8;
     srv.request.model_state.pose.position.y = pose.pose.position.y;
     srv.request.model_state.pose.position.z = pose.pose.position.z+3;
     srv.request.model_state.pose.orientation.x = pose.pose.orientation.x;

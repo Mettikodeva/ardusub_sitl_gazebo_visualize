@@ -527,7 +527,7 @@
           </ode>
         </physics>
       </joint>
-      <static>0</static>
+      <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>4.9e-05 5e-06 1.33333 0 0 -5.1e-05</pose>
     </model>
@@ -866,7 +866,7 @@
           </ode>
         </physics>
       </joint>
-      <static>0</static>
+      <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-3.70558 -2.76871 1.33334 5e-06 -1e-06 0.001381</pose>
     </model>
@@ -1205,10 +1205,11 @@
           </ode>
         </physics>
       </joint>
-      <static>0</static>
+      <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-3.07997 2.32124 1.33334 5e-06 -1e-06 0.001381</pose>
     </model>
+
     <model name='obstacle'>
       <link name='link'>
         <inertial>
@@ -1309,7 +1310,7 @@
           </surface>
         </collision>
       </link>
-      <static>0</static>
+      <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-3.5 0.172685 0.5 0 -0 0</pose>
     </model>
