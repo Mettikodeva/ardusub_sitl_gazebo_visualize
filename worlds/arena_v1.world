@@ -90,64 +90,61 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-
     
-      <light name='sun'>
-        <pose>0 0 10 0 -0 0</pose>
-      </light>
-    
-    <model name='gate'>
+    <model name="gate">
+    <include>
       <uri>model://gate</uri>
+    </include>
       <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>4.9e-05 5e-06 1.33333 0 0 -5.1e-05</pose>
+      <pose>-7.6 0 1 0 0 0</pose>
     </model>
 
-    <model name='gate_2'>
+    <model name="gate_2">
+    <include>
       <uri>model://gate</uri>
+    </include>
       <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-3.70558 -2.76871 1.33334 5e-06 -1e-06 0.001381</pose>
-    </model>
-    <model name='gate_3'>
-      <uri>model://gate</uri>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-3.07997 2.32124 1.33334 5e-06 -1e-06 0.001381</pose>
+      <pose> -18.6 -2 1 0 0 0</pose>
     </model>
 
-    <model name='obstacle'>
+    <model name="gate_3">
+    <include>
+      <uri>model://gate</uri>
+    </include>
+      <static>1</static>  
+      <pose>-18.6 2 1 0 0 0</pose>
+    </model>
+
+    <model name="obstacle">
+    <include>
       <uri>model://obstacle</uri>
+    </include>
       <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-3.5 0.172685 0.5 0 -0 0</pose>
+      <pose>-10.6 0 0.5 0 0 0</pose>
     </model>
     
     <model name="robot">
       <include>
         <uri>model://robot</uri>
       </include>
-      <pose>-2 0 3 0 -0 0</pose>
-    
+      <pose>0 0 3 0 3.14 0</pose>
     </model>
 
     <model name="ball">
       <link name='link'>
         <inertial>
-          <mass>1</mass>
+          <mass>0.046</mass>
           <inertia>
-            <ixx>0.145833</ixx>
+            <ixx>0.00000736</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>0.145833</iyy>
+            <iyy>0.00000736</iyy>
             <iyz>0</iyz>
-            <izz>0.125</izz>
+            <izz>0.00000736</izz>
           </inertia>
           <pose>0 0 0 0 -0 0</pose>
         </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
+  
         <pose>0 0 0 0 -0 0</pose>
         <gravity>1</gravity>
         <visual name='visual'>
@@ -174,8 +171,6 @@
           <cast_shadows>1</cast_shadows>
         </visual>
         <collision name='collision'>
-          
-          
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <sphere>
@@ -185,6 +180,7 @@
 
         </collision>
       </link>
+
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>0 0 0 0 -0 0</pose>

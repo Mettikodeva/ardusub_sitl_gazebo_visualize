@@ -14,11 +14,10 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <self_collide>0</self_collide>
-      <enable_wind>0</enable_wind>
-      <kinematic>0</kinematic>
+      
+      <kinematic>1</kinematic>
       <pose>0 0 0 0 -0 0</pose>
-      <gravity>1</gravity>
+      
       <visual name='visual'>
         <geometry>
           <cylinder>
@@ -44,8 +43,6 @@
         <cast_shadows>1</cast_shadows>
       </visual>
       <collision name='collision'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -100,7 +97,7 @@
         </surface>
       </collision>
     </link>
-    <static>0</static>
+    <static>1</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>
