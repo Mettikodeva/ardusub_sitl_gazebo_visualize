@@ -27,7 +27,7 @@ int main(int argc, char **argv){
     n_ptr = &n;
     ROS_INFO("Waiting for gazebo to start");
     
-    ros::Duration(30).sleep();
+    ros::Duration(15).sleep();
     ros::ServiceClient client = n.serviceClient<gazebo_ros_link_attacher::Attach>("/link_attacher_node/attach");
     ros::ServiceClient service = n.serviceClient<gazebo_msgs::SetModelState>("/gazebo/set_model_state");
     ros::ServiceClient get_state = n.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
