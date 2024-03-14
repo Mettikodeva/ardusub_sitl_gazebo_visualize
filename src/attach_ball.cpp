@@ -26,8 +26,8 @@ int main(int argc, char **argv){
     ros::NodeHandle n;
     n_ptr = &n;
     ROS_INFO("Waiting for gazebo to start");
-    ros::Duration(15).sleep();
     
+    ros::Duration(30).sleep();
     ros::ServiceClient client = n.serviceClient<gazebo_ros_link_attacher::Attach>("/link_attacher_node/attach");
     ros::ServiceClient service = n.serviceClient<gazebo_msgs::SetModelState>("/gazebo/set_model_state");
     ros::ServiceClient get_state = n.serviceClient<gazebo_msgs::GetModelState>("/gazebo/get_model_state");
@@ -39,10 +39,16 @@ int main(int argc, char **argv){
     ROS_INFO("Model state: %f %f %f %f %f %f %f", srv.response.pose.position.x, srv.response.pose.position.y, srv.response.pose.position.z, srv.response.pose.orientation.x, srv.response.pose.orientation.y, srv.response.pose.orientation.z, srv.response.pose.orientation.w);
     
     gazebo_msgs::SetModelState set_srv;
+    set_srv.request.model_state.model_name = "robot";
+    set_srv.request.model_state.pose.position.x = srv.response.pose.position.x;
+    set_srv.request.model_state.pose.position.y = srv.response.pose.position.y;
+    set_srv.request.model_state.pose.position.z = srv.response.pose.position.z+0.4;
+    service.call(set_srv);
+
     set_srv.request.model_state.model_name = "ball";
     set_srv.request.model_state.pose.position.x = srv.response.pose.position.x;
     set_srv.request.model_state.pose.position.y = srv.response.pose.position.y;
-    set_srv.request.model_state.pose.position.z = srv.response.pose.position.z-0.3;
+    set_srv.request.model_state.pose.position.z = srv.response.pose.position.z-0.2;
     service.call(set_srv);
     ros::spinOnce();
 
