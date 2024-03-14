@@ -172,7 +172,7 @@ target_link_libraries(${PROJECT_NAME}_update_camera
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  src/update.py
+  demo/drop_ball.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
