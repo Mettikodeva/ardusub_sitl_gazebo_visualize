@@ -127,11 +127,13 @@
       <include>
         <uri>model://robot</uri>
       </include>
-      <pose>0 0 3 0 3.14 0</pose>
+      <pose>0 0 0.2 0 0 0</pose>
     </model>
 
     <model name="ball">
+      <pose>-1 0 0 0 -0 0</pose>
       <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
         <inertial>
           <mass>0.046</mass>
           <inertia>
@@ -145,7 +147,6 @@
           <pose>0 0 0 0 -0 0</pose>
         </inertial>
   
-        <pose>0 0 0 0 -0 0</pose>
         <gravity>1</gravity>
         <visual name='visual'>
           <geometry>

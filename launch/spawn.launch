@@ -6,7 +6,9 @@
         <arg name="verbose" value="true"/>
         <arg name="paused" value="false"/>
     </include>
-    <node name="sim_update" pkg="sim" type="sim_update_node" output="screen"/>
+    <node name="sim_update" pkg="sim" type="sim_update_node" output="screen"/> 
+    
+    <node name="sim_update_camera" pkg="sim" type="sim_update_camera" output="screen"/> 
     
     <node name="sim_attach_ball" pkg="sim" type="sim_attach_ball" output="screen"/>
     

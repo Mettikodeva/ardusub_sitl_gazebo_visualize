@@ -2,6 +2,7 @@
 <sdf version='1.7'>
   <model name='robot'>
     <link name='link'>
+      <pose>0 0 0 0 3.14 3.14</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -14,14 +15,14 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>0 0 0 0 -0 0</pose>
       <gravity>1</gravity>
       <visual name='visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0.09 0 -1.5707 -0 -1.5707</pose>
         <geometry>
-          <box>
-            <size>0.8 0.6 0.6</size>
-          </box>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://robot/meshes/MARVIC-GNR2.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <lighting>1</lighting>
@@ -32,35 +33,30 @@
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0.8 0.3 0.3 1</ambient>
-          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.3 0.8 0.3 1</ambient>
+          <diffuse>0.5 0.6 0.5 1</diffuse>
           <specular>0.01 0.01 0.01 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
       </visual>
+
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.8 0.6 0.6</size>
+            <size>0.6 0.4 0.3</size>
           </box>
         </geometry>
       </collision>
     </link>
-      <link name="camera_link">
-      <pose>0.1 0 0.1 0 0 0  </pose>
-      <inertial>
-        <mass>0.01</mass>
-        <inertia>
-          <ixx>0.001</ixx>
-          <iyy>0.001</iyy>
-          <izz>0.001</izz>
-        </inertia>
-      </inertial>
+    
+    <link name="camera_link">
+      <pose>0.3 0 0 3.14159 0 0  </pose>
+      
       <!-- <collision name="collision">
           <geometry>
             <cylinder>
@@ -70,7 +66,7 @@
           </geometry>
         </collision> -->
       <visual name='camera_link'>
-        <pose>0.3 0 0.1 0 1.57 0</pose>
+        <pose>0 0 0 0 1.5707 0</pose>
         <geometry>
           <cylinder>
             <radius>.005</radius>
@@ -80,7 +76,7 @@
       </visual>
 
       <sensor name="cam" type="camera">
-        <pose>0.3 0 0.1 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <camera>
           <horizontal_fov>1.36136</horizontal_fov>
           <image>
@@ -105,15 +101,20 @@
         </plugin>
       </sensor>
     </link>
-    <joint name="camera_joint" type="fixed">
+
+    <joint name="camera_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
       <parent>link</parent>
       <child>camera_link</child>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
-          <upper>0</upper>
-          <lower>0</lower>
+          <upper>1.5707</upper>
+          <lower>-1.5707</lower>
         </limit>
+        <friction>0.1</friction>
+        <spring_reference>0</spring_reference>
+        <spring_stiffness>0.1</spring_stiffness>
       </axis>
     </joint>
     <static>0</static>
