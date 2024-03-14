@@ -112,9 +112,9 @@
           <upper>1.5707</upper>
           <lower>-1.5707</lower>
         </limit>
-        <friction>0.1</friction>
+        <friction>0.3</friction>
         <spring_reference>0</spring_reference>
-        <spring_stiffness>0.1</spring_stiffness>
+        <spring_stiffness>0.3</spring_stiffness>
       </axis>
     </joint>
     <static>0</static>
