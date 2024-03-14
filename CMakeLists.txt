@@ -173,6 +173,7 @@ target_link_libraries(${PROJECT_NAME}_update_camera
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   demo/drop_ball.py
+  demo/demo_camera_angle.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
