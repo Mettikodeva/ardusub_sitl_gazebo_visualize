@@ -21,6 +21,4 @@ if __name__ =="__main__":
                 flag = True
         pub.publish(angle)
 
-        angle.data = radians(90)
-        pub.publish(angle)
         rate.sleep()
