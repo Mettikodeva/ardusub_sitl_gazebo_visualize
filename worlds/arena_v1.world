@@ -107,6 +107,14 @@
       <pose> -18.6 -2 1 0 0 0</pose>
     </model>
 
+    <model name="target"> 
+    <include>
+      <uri>model://target</uri>
+    </include>
+    <static>1</static>
+    <pose> -22.6 0 0 0 0 0</pose>
+    </model>
+
     <model name="gate_3">
     <include>
       <uri>model://gate</uri>
@@ -186,6 +194,8 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>0 0 0 0 -0 0</pose>
     </model>
+
+
     <gui fullscreen='0'>
       <camera name='user_camera'>
         <pose>10.0214 5.96863 3.02066 -0 0.384298 -2.80878</pose>
